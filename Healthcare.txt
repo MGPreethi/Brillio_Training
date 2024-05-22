@@ -1,0 +1,122 @@
+using System;
+using System.Collections.Generic;
+
+namespace Management
+{
+    abstract class Person
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public Person(string name, int age)
+        {
+            Name = name;
+            Age = age;
+        }
+        public abstract void DisplayDetails();
+        public void DisplayDetails(string prefix)
+        {
+            Console.WriteLine($"{prefix} Name: {Name}, Age: {Age}");
+        }
+    }
+    class Doctor : Person
+    {
+        public string Specialization { get; set; }
+        public Doctor(string name, int age, string specialization) : base(name, age)
+        {
+            Specialization = specialization;
+        }
+        public override void DisplayDetails()
+        {
+            Console.WriteLine($"Doctor - Name: {Name}, Age: {Age}, Specialization: {Specialization}");
+        }
+    }
+
+    class Patient : Person
+    {
+        public string Condition { get; set; }
+
+        public Patient(string name, int age, string condition) : base(name, age)
+        {
+            Condition = condition;
+        }
+
+        public override void DisplayDetails()
+        {
+            Console.WriteLine($"Patient - Name: {Name}, Age: {Age}, Condition: {Condition}");
+        }
+    }
+
+    abstract class RecordManager
+    {
+        public abstract void RegisterNewRecord(string name, int age, string condition);
+        public abstract void DisplayRecords();
+    }
+
+    class MedicalRecordManager : RecordManager
+    {
+        public List<Patient> Patients { get; } 
+
+        public MedicalRecordManager()
+        {
+            Patients = new List<Patient>();
+        }
+
+        public override void RegisterNewRecord(string name, int age, string condition)
+        {
+            Patient newPatient = new Patient(name, age, condition);
+            Patients.Add(newPatient);
+            Console.WriteLine($"New patient registered: {name}");
+        }
+
+        
+        public override void DisplayRecords()
+        {
+            Console.WriteLine("Patients Details:");
+            foreach (var patient in Patients)
+            {
+                patient.DisplayDetails();
+            }
+        }
+    }
+
+    class AppointmentManager
+    {
+        
+        public void ScheduleAppointment(Patient patient, Doctor doctor, DateTime date)
+        {
+            ScheduleAppointment(patient, doctor, date, "Appointment scheduled");
+        }
+
+        public void ScheduleAppointment(Patient patient, Doctor doctor, DateTime date, string prefix)
+        {
+            if (patient == null || doctor == null)
+            {
+                Console.WriteLine("Error: Invalid patient or doctor provided for scheduling appointment.");
+                return;
+            }
+
+            Console.WriteLine($"{prefix} for {patient.Name} with {doctor.Name} on {date}");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            MedicalRecordManager medicalRecordManager = new MedicalRecordManager();
+            AppointmentManager appointmentManager = new AppointmentManager();
+
+            medicalRecordManager.RegisterNewRecord("Banny", 5, "Fever");
+            medicalRecordManager.RegisterNewRecord("Virat", 15, "Fracture");
+
+            Doctor doctor1 = new Doctor("Dr.RAJU", 40, "Cardiologist");
+            Doctor doctor2 = new Doctor("Dr.RAHUL", 35, "Pediatrician");
+
+            medicalRecordManager.DisplayRecords();
+
+            appointmentManager.ScheduleAppointment(medicalRecordManager.Patients[0], doctor1, DateTime.Now.AddDays(3));
+            appointmentManager.ScheduleAppointment(medicalRecordManager.Patients[1], doctor2, DateTime.Now.AddDays(5));
+        }
+    }
+}
