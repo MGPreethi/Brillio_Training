@@ -1,0 +1,113 @@
+JSON stands for JavaScript Object Notation. It is a format for structuring data. This format is used by different web applications 
+to communicate with each other. It is the replacement of the XML data exchange format. It is easy to structe the data compare to XML. 
+It supports data structures like arrays and objects and the JSON documents that are rapidly executed on the server.
+
+Why JSON?
+It is a Language-Independent format that is derived from JavaScript. It is Human-readable and writable. It is a lightweight text-based 
+data interchange format which means, it is simpler to read and write when compared to XML.
+
+JSON Syntax Rules
+Data is in name/value pairs
+Data is separated by commas
+Curly braces hold objects
+Square brackets hold arrays
+
+Advantages of JSON:
+
+It stores all the data in an array so that data transfer makes easier. That’s why it is the best for sharing data of any size even audio, video, etc.
+Its syntax is very small, easy, and light-weighted that’s the reason it executes and responds in a faster way.
+It has a wide range for browser support compatibility with the operating systems. It doesn’t require much effort to make it all browser compatible.
+
+Disadvantages of JSON:
+
+The main disadvantage is that there is no error handling. If there was a slight mistake in the script then you will not get the structured data.
+It becomes quite dangerous when you used it with some unauthorized browsers. Like JSON service return a JSON file wrapped in a function call that
+has to be executed by the browsers if the browsers are unauthorized then your data can be hacked.
+
+2) Explain what is JSON objects?
+An object can be defined as an unordered set of name/value pairs.  
+
+==========================================================================================================================
+https://www.javatpoint.com/j2ee-interview-questions    J2EE
+https://www.geeksforgeeks.org/microservices/    components, Antipatterns
+https://www.geeksforgeeks.org/introduction-of-security-of-microservices/    security of microservices
+Microservices:
+1) What are Microservices? / What do you understand by Microservices?
+Microservices are an architectural approach or style that is used to build applications. It divides application into small, loosely coupled services that can be 
+developed, deployed and maintained independently.
+Monolothic architecture involes in building application as single unit.
+
+
+Microservices	                                      Monolithic Architecture
+The service startup is fast in Microservices.	                 The service startup takes time as it is slow in Monolithic Architecture.
+It is a loosely coupled architecture.	                   It is primarily a tightly coupled architecture.
+
+
+We can categorize the tests used in Microservice architecture into three main categories:
+Bottom Level Test: The bottom-level tests perform general tests such as performance tests and unit tests. These kinds of tests are entirely automated.
+Middle-Level Tests: The middle-level tests are used to perform exploratory tests such as the stress test and usability test.
+Top Level Tests: The top-level tests are used to conduct acceptance tests, mostly fewer in numbers.
+ These types of tests make stakeholders know about different software features.
+ 
+ What is the main difference between SOA and the Microservices Architecture?
+SOA stands for Service Oriented Architecture. It is a collection of services used to communicate with each other through simple data passing
+ or activity coordination. On the other hand, the Microservices Architecture is a collection of small functional modules that are independently deployable, 
+ scalable, target specific business goals, and communicate over standard protocols.
+ 
+ What is a Client certificate? What is its usage?
+A client certificate is a digital certificate used to make authenticated requests to a remote server. A certificate is generated for each microservice.
+
+What is the use of PACT in Microservices architecture?
+PACT is an open-source tool used for testing interactions between service providers and consumers. It increases the reliability of the Microservices applications.
+
+21) What do you understand by OAuth?
+OAuth stands for Open Authorization protocol. This protocol allows you to access the client applications on HTTP for third-party providers GitHub, Facebook, etc. 
+
+24) What do you understand by end-to-end Microservices testing?
+End-to-end testing is used to validate that every process in the workflow is functioning correctly. 
+
+Coupling: Coupling is specified as a relationship between module A and another module B. There are mainly three types of coupling. Any module can be highly coupled
+(highly dependent), loosely coupled, and uncoupled with other modules. The best coupling is the loose coupling which can be achieved through interfaces.
+Cohesion: Cohesion is the relationship between 2 or more parts within a module. The high cohesion within a module specifies that the module can perform 
+a specific task with maximum efficiency on its own, without the need to communicate with other modules. High cohesion increases the functional strength of the module.
+
+
+26) What is the use of containers in Microservices?
+Containers are the easiest and effective method to manage microservice-based applications. They are like a software development platform. They also help us to develop
+ and deploy individually. A Docker is an example of a container.
+ 
+ 28) What do you understand by semantic monitoring in Microservices architecture?
+Semantic monitoring is used to combine the automated tests by monitoring the application. It is used to find out the reasons why your business is not getting more profits.
+
+What is the full form of CDC? What is its usage?
+The full form of CDC is a Consumer-Driven Contract. It is a pattern used for developing Microservices so that the external systems can use them efficiently.
+
+31) What is Reactive Extension in Microservices?
+Reactive Extension is a design pattern that allows collecting results by calling multiple services and then compiles a combined response. It is also called Rx. 
+
+How independent micro-services communicate with each other?
+We can make our micro-services communicate with each other according to our project needs. In most cases, developers use HTTP/REST with JSON or Binary protocol
+ while using any communication protocol.
+ 
+ Communication b/w microservices: using API calls, Restful HTTP calls, and messaging queues.
+ 
+ Challenges faced using microservices:
+ Microservices rely on each other. Communication is needed b/t each other.
+ we have to monitor each microservice health and performance
+ design approch
+ Debugging and testing takes time.
+ 
+ 
+ 
+ How to handle security in microservices?
+ load balancing-client side/server side/server
+ service registry
+ gateway api
+ sleep and wait
+ thread communication
+ covariant types
+ hasmap returns int.
+ 
+ 
+
+ 

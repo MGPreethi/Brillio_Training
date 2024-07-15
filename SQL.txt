@@ -1,0 +1,121 @@
+https://www.geeksforgeeks.org/mysql-interview-questions/#q43
+
+There are various relationships, namely:
+
+One-to-One Relationship.
+One to Many Relationships.
+Many to One Relationship.
+Self-Referencing Relationship.
+
+
+
+SQL commands are like instructions to a table. It is used to interact with the database with some operations.
+
+62) What is REGEXP?
+REGEXP is a pattern match using a regular expression. The regular expression is a powerful way of specifying a pattern for a sophisticated search.
+
+To understand it better, you can think of a situation
+ of daily life when you search for .txt files to list all text files in the file manager. The regex equivalent for .txt will be .*\.txt.
+ 
+ 19. How to delete a table in MySQL?
+We can delete a table by using DROP TABLE statement. This statement deletes complete data of table.
+
+DROP TABLE table-name
+
+27. Write a statement to find duplicate rows In the MySQL table?
+
+SQL | Constraints:
+Used to specify the limit on the type of data that can be stored in a particular column in a table using constraints.
+NOT NULL: This constraint tells that we cannot store a null value in a column.
+UNIQUE: This constraint when specified with a column, tells that all the values in the column must be unique. 
+PRIMARY KEY: A primary key is a field which can uniquely identify each row in a table. 
+FOREIGN KEY: A Foreign key is a field which can uniquely identify each row in a another table. And this constraint is used to specify a field as Foreign key.
+CHECK: This constraint helps to validate the values of a column to meet a particular condition
+DEFAULT: This constraint specifies a default value for the column when no value is specified by the user.
+
+12. What is a Self-Join?
+A self JOIN is a case of regular join where a table is joined to itself
+
+13. What is a Cross-Join?
+Cross join can be defined as a cartesian product of the two tables included in the join. Where no.of rows in first table is multiplied by no. of rows in 2nd table.
+
+What is index:
+Indexes are used to retrieve data from the database very fast. The users cannot see the indexes, they are just used to speed up searches/queries.
+
+18. What is a Subquery? What are its types?
+A subquery is a query within another query, also known as a nested query or inner query.
+
+ORDER BY clause in SQL is used to sort the records based on some field(s) in ascending (ASC) or descending order (DESC).
+The GROUP BY is used to group the rows that have the same values.
+
+Normalization:
+It is a prcess of organizing data. It is used to avoid duplication and redundancy.
+It includes the creation of tables, establishing relationships between them, and defining rules for those relationships.
+
+Denormalization:
+Denormalization is the inverse process of normalization, where the normalized schema is converted into a schema that has redundant information. 
+------------------
+What is a Stored Procedure?
+A stored procedure is a prepared SQL code that you can save, so the code can be reused whenever needed.
+So if you have an SQL query that you write over and over again, save it as a stored procedure, and then just call it to execute it.
+You can also pass parameters to a stored procedure, so that the stored procedure can act based on the parameter value(s) that is passed.
+
+Advantages:
+Stored Procedure increases the performance of the applications.
+Stored procedure reduces the traffic between application and database server.
+
+Pattern Matching:
+SQL pattern matching allows you to search for patterns in data if you don't know the exact word or phrase you are seeking. 
+
+8. What is a Primary Key?
+The PRIMARY KEY constraint uniquely identifies each row in a table. It must contain UNIQUE values and has an implicit NOT NULL constraint.
+A table in SQL is strictly restricted to have one and only one primary key, which is comprised of single or multiple fields (columns).
+
+Foreign Key:
+The FOREIGN KEY constraint is a key used to link two tables together.
+A FOREIGN KEY is a field (or collection of fields) in one table that refers to the PRIMARY KEY in another table.
+The purpose of Foreign keys is to maintain data integrity and allow navigation between two different instances of an entity.
+The table with the foreign key constraint is labeled as the child table, and the table containing the candidate key is labeled as the referenced or parent table.
+
+Candidate key:
+A Candidate Key is a column or group of columns we can use to uniquely identity a row in a table. 
+There can be multiple Candidate Keys in a table, but we will pick just one of them to serve as the Primary Key of the table.
+
+SQL	MySQL difference:
+SQL stands for Structured Query Language. It is a query language that allows users to manage relational database management systems.	
+MySQL is an RDBMS that can implement SQL queries to manipulate the data.
+SQL is a language which is used to operate your database whereas MySQL was one of the first open-source database available in the market
+
+34. What is User-defined function? What are its various types?
+The user-defined functions in SQL are like functions in any other programming language that accept parameters, perform complex calculations, and return a value. 
+Scalar Function: As explained earlier, user-defined scalar functions return a single scalar value.
+Table-Valued Functions: User-defined table-valued functions return a table as output.
+
+
+https://www.geeksforgeeks.org/sql-join-set-1-inner-left-right-and-full-joins/
+
+https://www.javatpoint.com/dbms-normalization - 
+
+SELECT StudentCourse.COURSE_ID, Student.NAME, Student.AGE FROM Student
+INNER JOIN StudentCourse
+ON Student.ROLL_NO = StudentCourse.ROLL_NO;
+
+SELECT Student.NAME,StudentCourse.COURSE_ID 
+FROM Student
+LEFT JOIN StudentCourse 
+ON StudentCourse.ROLL_NO = Student.ROLL_NO;
+
+
+SELECT Student.NAME,StudentCourse.COURSE_ID 
+FROM Student
+RIGHT JOIN StudentCourse 
+ON StudentCourse.ROLL_NO = Student.ROLL_NO;
+
+SELECT Student.NAME,StudentCourse.COURSE_ID 
+FROM Student
+FULL JOIN StudentCourse 
+ON StudentCourse.ROLL_NO = Student.ROLL_NO;
+
+SELECT *
+FROM table1
+CROSS JOIN table2;

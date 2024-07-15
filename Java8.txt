@@ -1,0 +1,243 @@
+Q2: What advantages does Java 8 bring?
+Code is more concise and readable
+Code is more reusable
+Code is more testable and maintainable
+Users can write parallel code
+Applications now perform better
+Code is far more productive
+
+(parameter list) -> lambda body
+A basic example of the Lambda Expression is:
+(x,y) -> x+y
+
+Optional class to prevent the application from crashing and terminating unexpectedly.
+
+Date/Time API
+Java has introduced a new Date and Time API since Java 8. The java.time package contains Java 8 Date and Time classes.
+
+Q4: How are functional interfaces and Lambda Expressions related?
+Lambda expressions are applied only to the functional interface’s abstract method.
+------------------------
+Lambda expression example: execute this in programiz online editor
+import java.util.ArrayList;
+class Test {
+    public static void main(String args[])
+    {
+        // Creating an ArrayList with elements
+        // {1, 2, 3, 4}
+        ArrayList<Integer> arrL = new ArrayList<Integer>();
+		//inserting elements to array list
+        arrL.add(1);
+        arrL.add(2);
+        arrL.add(3);
+        arrL.add(4);
+ 
+        // Using lambda expression to print all elements
+        // of arrL
+        arrL.forEach(n -> System.out.println(n));
+ 
+        // Using lambda expression to print even elements
+        // of arrL
+        arrL.forEach(n -> {
+            if (n % 2 == 0)
+                System.out.println(n);
+        });
+    }
+}
+
+O/P:
+1
+2
+3
+4
+2
+4
+---------------------------------
+Java provides a new method forEach() to iterate the elements.
+This method takes a single parameter which is a functional interface. So, you can pass lambda expression as an argument.
+--------------------------------------------
+// Java Program to Illustrate Functional Interface
+// Via apply() method
+ 
+// Importing interface
+import java.util.function.Function;
+ 
+// Main class
+public class GFG {
+ 
+    // Main driver method
+    public static void main(String args[])
+    {
+        // Function which takes in a number
+        // and returns half of it
+        Function<Integer, Double> half = a -> a / 2.0;
+ 
+        // Applying the function to get the result
+        System.out.println(half.apply(10));
+    }
+}
+O/p:
+5.0
+
+---------------------------------------
+The Stream API, introduced in Java 8, it is used to process collections of objects.
+We have java.util.stream package. This package consists of classes, interfaces and enum to allows functional-style operations on the elements.
+Streams internally works like:
+1.Getting stream from collection
+2. Filtering only required elements
+3. Collecting required elements to list.
+
+Syntax:
+Stream s = c.stream();
+
+// Java Program to illustrate FILTER  
+// & COLLECT Operations 
+import java.io.*; 
+import java.util.*; 
+import java.util.stream.*; 
+  
+// Main class 
+public class GFG { 
+  
+    // Main driver method 
+    public static void main(String[] args) 
+    { 
+        // Creating an ArrayList object of integer type 
+        ArrayList<Integer> al = new ArrayList<Integer>(); 
+  
+        // Inserting elements to ArrayList class object 
+        // Custom input integer numbers 
+        al.add(2); 
+        al.add(6); 
+        al.add(9); 
+        al.add(4); 
+        al.add(20); 
+  
+        // First lets print the collection 
+        System.out.println("Printing the collection : "
+                           + al); 
+  
+        // Printing new line for better output readability 
+        System.out.println(); 
+  
+        // Stream operations 
+        // 1. Getting the stream from this collection 
+        // 2. Filtering out only even elements 
+        // 3. Collecting the required elements to List 
+        List<Integer> ls 
+            = al.stream() 
+                  .filter(i -> i % 2 == 0) 
+                  .collect(Collectors.toList()); 
+  
+        // Print the collection after stream operation 
+        // as stored in List object 
+        System.out.println( 
+            "Printing the List after stream operation : "
+            + ls); 
+    } 
+}
+O/p:
+Printing the collection : [2, 6, 9, 4, 20]
+Printing the List after stream operation : [2, 6, 4, 20]
+-------------------------
+New date-time API is introduced in Java 8 to overcome the following drawbacks of old date-time API : 
+
+Not thread safe :  the new Date and Time APIs introduced in Java 8 are immutable and thread safe,
+Less operations : In old API there are only few date operations but the new API provides us with many date operations.
+
+LocalTime currentTime = LocalTime.now();				//13:33:43.557
+
+LocalDate currentDate = LocalDate.now();				//2020-05-03
+
+LocalDateTime currentDateTime = LocalDateTime.now();	//2020-05-03T13:33:43.557
+
+// Java code for LocalDate
+// / LocalTime Function
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+  
+public class Date {
+ 
+public static void LocalDateTimeApi()
+{
+  
+    // the current date
+    LocalDate date = LocalDate.now();
+    System.out.println("the current date is "+
+                        date);
+  
+  
+    // the current time
+    LocalTime time = LocalTime.now();
+    System.out.println("the current time is "+
+                        time);
+      
+  
+    // will give us the current time and date
+    LocalDateTime current = LocalDateTime.now();
+    System.out.println("current date and time : "+
+                        current);
+  
+  
+    // to print in a particular format
+    DateTimeFormatter format = 
+      DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");  
+   
+    String formatedDateTime = current.format(format);  
+    
+    System.out.println("in formatted manner "+
+                        formatedDateTime);
+  
+  
+    // printing months days and seconds
+    Month month = current.getMonth();
+    int day = current.getDayOfMonth();
+    int seconds = current.getSecond();
+    System.out.println("Month : "+month+" day : "+
+                        day+" seconds : "+seconds);
+  
+    // printing some specified date
+    LocalDate date2 = LocalDate.of(1950,1,26);
+    System.out.println("the republic day :"+date2);
+  
+    // printing date with current time.
+    LocalDateTime specificDate = 
+        current.withDayOfMonth(24).withYear(2016);
+ 
+    System.out.println("specific date with "+
+                       "current time : "+specificDate);
+}
+ 
+    // Driver code
+    public static void main(String[] args) 
+    {
+        LocalDateTimeApi();
+    }
+}
+Output
+the current date is 2021-09-23
+the current time is 20:52:39.954238
+current date and time : 2021-09-23T20:52:39.956909
+in formatted manner 23-09-2021 20:52:39
+Month : SEPTEMBER day : 23 seconds : 39
+the republic day :1950-01-26
+specific date with current time : 2016-09-24T20:52:39.956909
+--------------------------
+Java Optional example:
+import java.util.Optional;  
+public class OptionalExample {  
+    public static void main(String[] args) {  
+        String[] str = new String[10];        
+        str[5] = "JAVA OPTIONAL CLASS EXAMPLE";  // Setting value for 5th index  
+        Optional<String> checkNull = Optional.ofNullable(str[5]);  
+        checkNull.ifPresent(System.out::println);   // printing value by using method reference  
+        System.out.println(checkNull.get());    // printing value by using get method  
+        System.out.println(str[5].toLowerCase());     
+    }  
+}  
+
+Output:
+
+JAVA OPTIONAL CLASS EXAMPLE
+JAVA OPTIONAL CLASS EXAMPLE
+java optional class example

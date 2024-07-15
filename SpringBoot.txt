@@ -1,0 +1,125 @@
+The spring-boot-starter-parent is a project starter. It provides default configurations for our applications. 
+It is used internally by all dependencies. 
+All Spring Boot projects use spring-boot-starter-parent as a parent in pom.xml file.
+----------------------=
+Spring CLI:The Spring Boot CLI is a command line tool that you can use if you want to quickly develop a Spring application. 
+It lets you run Groovy scripts, 
+-------------
+@RequestMapping is used at class level where as @GetMapping is used to connect methods.
+Both are used to map HTTP requests.
+The @RequestMapping annotation is used to provide routing information. @RequestMapping can be used with GET,PUT.POST and other request method.
+@GetMapping is the extention of Request mapping.
+------------------------------
+5. How does a spring application get started?:
+-A Spring application gets started by calling the main() method in the SpringApplication class. This method takes a 
+SpringApplicationBuilder object as a parameter, which is used to configure the application. The SpringApplicationBuilder 
+object can be used to set the application’s name, version, and other properties.
+-Once the SpringApplication object is created, the run() method is called. This method starts the application by creating
+ an application context and initializing it.
+-Once the application context is initialized, the run() method starts the application’s embedded web server. The embedded 
+web server is used to serve the application’s web pages.
+EX:
+
+@SpringBootApplication 
+public class MyApplication { 
+   
+       public static void main(String[] args) {    
+    
+             SpringApplication.run(MyApplication.class);        
+               // other statements     
+       } 
+}
+
+-------------------------------------
+7. What is Spring Boot dependency management?
+The Spring Boot framework offers a feature called Spring Boot dependency management that makes it easier to manage dependencies
+ in a Spring Boot project. It makes sure that all necessary dependencies are appropriate for the current Spring Boot version and 
+ are compatible with it.
+ ---------------------------------
+ 12. Explain Spring Data
+Spring Data is a powerful framework that can be used to develop data-oriented applications.
+----------------------------
+You can then use the spring.profiles.active property to specify which profile you want to use.
+---------------------------------
+Spring MVC:
+The model: The model represents the data that is used in the application.
+The view: The view is responsible for displaying the data to the user.
+The controller: The controller is responsible for handling user requests and interacting with the model and view.
+-----------------------------
+19. Define some common Spring Boot CLI commands?
+spring init, spring run, spring test, spring start, spring help
+----------------------------
+22. Can we disable the default web server in the Spring Boot application?
+Yes, you can disable the default web server in the Spring Boot application.
+To do this, you need to set the server.port property to -1 in your application’s application.properties file.
+-----------------------------
+23. How to disable a specific auto-configuration class?
+To disable a specific auto-configuration class in a Spring Boot application, you can use the @EnableAutoConfiguration 
+annotation with the exclude attribute.
+-----------------
+30. What is dependency Injection?
+A design pattern called Dependency Injection (DI) enables us to produce loosely coupled components. In DI, an object’s ability 
+to complete a task depends on another object, the dependency object.
+----------------------
+31. What are the types of Dependency Injections?
+Constructor injection: This is the most common type of DI in Spring Boot. In constructor injection, the dependency object is injected into
+the dependent object’s constructor.
+Setter injection: In setter injection, the dependency object is injected into the dependent object’s setter method.
+Field injection: In field injection, the dependency object is injected into the dependent object’s field.
+----------------------------
+33. What is an IOC container?
+The Spring IoC container is responsible for managing the objects of an application. 
+It uses dependency injection to achieve inversion of control.
+The interfaces BeanFactory and ApplicationContext represent the Spring IoC container.
+------------------
+---------------------------
+27. How to get the list of all the beans in your Spring boot application?
+Using the ApplicationContext object in Spring Boot, you can retrieve a list of all the beans in your application.
+------------
+Spring boot features:
+1. Auto Configuration
+3. Production Ready
+6. Supports Microservices
+7. Embedded Servers
+8. Extensive Plugin Support
+2. Standalone Nature
+9. Customizable
+
+Springboot  advantages:
+It creates stand-alone Spring applications that can be started using Java -jar.
+Reduces lots of development time and increases productivity.
+Avoids writing lots of boilerplate Code, Annotations and XML Configuration.
+It offers a CLI tool for developing and testing the Spring Boot application.
+It offers the number of plug-ins.
+It provides production-ready features such as metrics, health checks, and externalized configuration.
+
+qualifier, autowiring byname, bytype
+----------------------------
+@ComponentScan: It is used when we want to scan a package for beans. It is used with the annotation @Configuration. 
+
+@SpringBootApplication: It is a combination of three annotations @EnableAutoConfiguration, @ComponentScan, and @Configuration.
+
+@EnableAutoConfiguration, as its name says, enables auto-configuration. This annotation auto-configures the beans that are present in the classpath. 
+It simplifies the developer’s work by assuming the required beans from the classpath and configure it to run the application. 
+
+@PathVariable: It is used to extract the information from the URI directly.
+
+@Controller: It is used to create Controller classes and simultaneously it handles the HTTP requests. Generally we use @Controller annotation with
+@RequestMapping annotation to map HTTP requests with methods inside a controller class.
+
+@RestController :This annotation is used to handle REST APIs such as GET, PUT, POST, DELETE etc. and also used to create RESTful web services using Spring MVC.
+
+@ResponseBody Annotation: This annotation is used to convert the domain object into HTTP request in the form of JSON or any other text.
+
+@RequestParam:
+@Value
+-------------------------------------------
+Autowiring feature of spring framework enables you to inject the object dependency implicitly. It internally uses setter or constructor injection.
+1)	no:	It is the default autowiring mode. It means no autowiring bydefault.
+2)	byName:	The byName mode injects the object dependency according to name of the bean. In such case, property name and bean name must be same. 
+It internally calls setter method.
+3)	byType:	The byType mode injects the object dependency according to type. So property name and bean name can be different. It internally calls setter method.
+4)	constructor:	The constructor mode injects the dependency by calling the constructor of the class. It calls the constructor having large number of parameters.
+
+
+The @Qualifier annotation is used to resolve the autowiring conflict, when there are multiple beans of same type.

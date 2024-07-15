@@ -1,0 +1,36 @@
+1.which design pattern you are using in your project
+2.what is the drawbacks in single ton design pattern
+3.what is SOLID principles
+4.what is MVC design patters
+5.how to achieve thread safe in single ton design patters
+6.what is the key difference between creational,structural,behavioural patterns
+
+A design pattern is basically a reusable and generalized solution to a common problem that arises during software design and development. 
+Design patterns are not specific to a particular programming language or technology instead, they provide abstract templates or blueprints 
+for solving recurring design-related problems. They help software developers create well-structured, maintainable, and flexible code by promoting
+best practices and proven solutions.
+
+
+https://www.guru99.com/java-design-patterns-interview-questions.html
+https://www.geeksforgeeks.org/top-design-patterns-interview-questions/
+
+https://www.javatpoint.com/j2ee-interview-questions
+
+1. Early Instantiation:It is responsible for the creation of instance at load time.
+
+2. Lazy Instantiation: It is responsible for the creation of instance when required.
+
+21) What is the proxy pattern, and what does it do?
+The term Proxy stands for an object representing another object. The proxy pattern provides a substitute or placeholder for another purpose to control access to it.
+According to Gangs of four, a Proxy Pattern "provides control for accessing the original object."
+We can perform many security operations like hiding the information of the original object, on-demand loading, etc.
+
+The state design pattern is used to manage and define the state of an object,
+
+In the chain of responsibility pattern, Sender sends a request to a chain of objects, and any object in the chain can handle the request.
+example, an ATM service uses the Chain of Responsibility design pattern in monetary transactions.
+
+
+Design patterns are reusable solutions to common software engineering problems. There are three types of design patterns: creational, structural, 
+and behavioral12.Creational patterns deal with object creation mechanisms, trying to create objects in a manner suitable to the situation12.Structural
+patterns deal with object composition12.Behavioral patterns deal with communication between objects12.
